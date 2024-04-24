@@ -1,0 +1,4 @@
+flask==2.3.2               # Web framework for building APIs
+supabase-py==0.20.0        # Supabase client library
+python-dotenv==0.19.2      # Library for managing environment variables
+flask-jwt-extended==4.3.0  # Flask extension for JWT authentication
