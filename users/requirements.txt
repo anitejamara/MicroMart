@@ -1,5 +1,4 @@
-flask==2.3.2               # Web framework for building APIs
-supabase-py==0.20.0        # Supabase client library
-python-dotenv==0.19.2      # Library for managing environment variables
-flask-jwt-extended==4.3.0  # Flask extension for JWT authentication
-Werkzeug==2.0.2            # Provides password hashing utilities
+Flask==2.0.2
+flask-jwt-extended==4.3.1
+supabase==0.1.1
+python-dotenv==0.19.2
