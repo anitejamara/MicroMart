@@ -109,36 +109,5 @@ def login():
             return jsonify({'message': f'Failed to login user: {str(e)}'}), 500
 
 
-# @app.route('/warehouse', methods=['POST'])
-# def warehouse():
-#     #PLAN:everytime user accesses warehouse, we can prompt them to enter email and password for "security reasons"
-#     data = request.get_json()
-#     email=data['Email']
-#     password=data['Password']
-#     keys_to_exclude = ['Email', 'Password']
-#     filtered_data = {key: value for key, value in data.items() if key not in keys_to_exclude}
-#     try:
-#         response, count = supabase.table('Users').select("*").eq('Email', email).eq('Password', password).execute()
-#         if 'error' in response:
-#             error_message = response['error']['message']
-#             return jsonify({'message': f'Failed to login user: {error_message}'}), 500
-#         if count == 0:
-#             return jsonify({'message': 'User not found'}), 404
-#         response_data=response[1][0]
-#         is_admin=response_data.get('is_admin',False)
-#         # print(is_admin)
-#         if not is_admin:
-#             return jsonify({'message': 'Access denied. User is not an admin'}), 403
-        
-#         product_response, product_count=supabase.table('Products').insert(filtered_data).execute()
-#         if 'error' in product_response:
-#             error_message = product_response['error']['message']
-#             return jsonify({'message': f'Failed to add product: {error_message}'}), 500
-
-#         return jsonify({'message': 'Product added successfully'}), 201
-
-#     except Exception as e:
-#         return jsonify({'message': f'Error: {str(e)}'}), 500
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
