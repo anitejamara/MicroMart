@@ -11,10 +11,14 @@ load_dotenv()
 jwt = JWTManager(app)
 
 # Initialize Supabase client
-SUPABASE_URL = os.getenv('SUPABASE_URL')
-SUPABASE_KEY = os.getenv('SUPABASE_KEY')
+# SUPABASE_URL = os.getenv('SUPABASE_URL')
+# SUPABASE_KEY = os.getenv('SUPABASE_KEY')
+SUPABASE_URL="https://ldenrcqttxxnhernzyph.supabase.co"
+SUPABASE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkZW5yY3F0dHh4bmhlcm56eXBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI4NTI1NTcsImV4cCI6MjAyODQyODU1N30.WCkmIB1k2l2Syap8jo6-vRvH1mLqI8rJhfFqSobFUmY"
+SECRET_KEY="cloudcomputing"
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')  # Load your secret key from environment variables
+# app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')  # Load your secret key from environment variables
+app.config['SECRET_KEY'] = SECRET_KEY
 
 
 # Function to check if the user is an admin

@@ -6,7 +6,7 @@ FROM python:3.9-slim
 # Set environment variables
 ENV FLASK_APP=userMgmt.py
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_RUN_PORT=5000
+ENV FLASK_RUN_PORT=5003
 
 # Set the working directory
 WORKDIR /app/usermgmt
@@ -18,7 +18,7 @@ COPY . /app/usermgmt
 RUN pip install --no-cache-dir -r /app/usermgmt/requirements.txt
 
 # Expose port 5000
-EXPOSE 5000
+EXPOSE 5003
 
 # Define the command to run your Flask application
 CMD ["python", "userMgmt.py"]

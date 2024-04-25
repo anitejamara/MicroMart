@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: user-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: users
@@ -17,4 +17,4 @@ spec:
           image: ashvinbhat/user-management:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 5000
+            - containerPort: 5003
